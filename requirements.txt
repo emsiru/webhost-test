@@ -1,3 +1,4 @@
 dash==2.6.0
 dash_bootstrap_components
-gunicorn
+opcua
+dash_daq
