@@ -6,6 +6,8 @@ from pages import header
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+server = app.server
+
 app.layout = html.Div([ 
     dcc.Link(id = 'page-1', href = '/page-1'),
     dcc.Location(id = 'url', refresh=False),
