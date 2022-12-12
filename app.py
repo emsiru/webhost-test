@@ -2,7 +2,7 @@ from dash import dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 from opcua import Client
 import dash_daq as daq
-from pages import header
+
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -14,13 +14,18 @@ app.layout = html.Div([
     html.Div(id = 'content', children = [])
 ])
 
+header = html.Div([ 
+    html.H1('Hey')
+])
+
+
 @app.callback(
     Output('content', 'children'),
     Input('url', 'pathname')
 )
 def update_page(pathname):
     if pathname == '/page-1':
-        return header.layout
+        return header
     else:
         return 'Error'
 
